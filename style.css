@@ -5,16 +5,112 @@ body {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 .header {
   width: 100vw;
   height: 100vh;
   background-color: rgba(205, 230, 173, 0.2);
 }
-.logo-img {
-  width: 10%;
-  height: 10%;
+
+.logo {
+  display: block;
+  margin: 20px 10px;
 }
+
+.logo-img {
+  width: 150px;
+}
+
+.sm-logo {
+  display: none;
+  width: 0;
+}
+
 .side--nav {
-  width: 300px;
+  width: 250px;
   height: 100%;
+  background-color: rgba(0, 119, 128, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.nav--links {
+  list-style: none;
+  position: relative;
+}
+
+.nav--links li {
+  padding: 8px 0;
+}
+
+.nav--links li a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.active {
+  position: absolute;
+  background-color: white;
+  width: 80%;
+  margin: 10px 20px;
+  height: 45px;
+  left: 0;
+  top: 0;
+  display: none;
+  z-index: -1;
+  transition: top 0.5s;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+}
+
+.nav--links li:hover a {
+  color: black;
+  transition: 0.5s;
+}
+
+.nav--links li:hover~.active {
+  display: block;
+}
+
+.nav--links li:hover:nth-child(1)~.active {
+  top: 0;
+}
+
+.nav--links li:hover:nth-child(2)~.active {
+  top: 16%;
+}
+
+.nav--links li:hover:nth-child(3)~.active {
+  top: 34%;
+}
+
+.nav--links li:hover:nth-child(4)~.active {
+  top: 50%;
+}
+
+.nav--links li:hover:nth-child(5)~.active {
+  top: 66%;
+}
+
+.nav--links li:hover:nth-child(6)~.active {
+  top: 82%;
+}
+
+@media only screen and (max-width: 600px) {
+  .sm-logo {
+    display: block;
+    width: 60px;
+    margin: 10px 15px;
+  }
+
+  .logo-img {
+    display: none;
+  }
+
+  .side--nav {
+    width: 100px;
+  }
 }
